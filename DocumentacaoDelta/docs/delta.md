@@ -71,6 +71,25 @@ Documentação dos módulos disponíveis para o usuário final.
 - Visualizar tabelas ativas e arquivadas
 - Editar itens da tabela antes de publicar
 - Arquivar tabelas antigas
+- **Inativar manualmente** tabelas ativas (quando necessário criar nova tabela antes da expiração)
+- Filtrar tabelas por data de criação
+
+**Publicação de Tabela:**
+- **Não bloqueia:** O sistema permite publicar uma nova tabela mesmo quando já existe uma ativa
+- **Arquivamento automático:** Ao publicar uma nova tabela, o sistema arquiva automaticamente a tabela anterior
+- A tabela anterior é marcada como "ARQUIVADA" e seus preços são removidos imediatamente
+- A nova tabela passa a ser a única ativa no sistema
+
+**Inativação Manual:**
+- Permite inativar uma tabela ativa manualmente, sem precisar publicar uma nova
+- Útil quando é necessário remover preços do sistema temporariamente
+- Ao inativar, a tabela é arquivada e seus preços são removidos imediatamente
+- Após inativar, é possível criar e publicar uma nova tabela normalmente
+
+**Status da tabela:**
+- **RASCUNHO:** Tabela em edição, ainda não publicada
+- **ATIVA:** Tabela publicada e em uso nas vendas
+- **ARQUIVADA:** Tabela antiga, substituída por uma nova ou inativada manualmente
 
 **Uso:** Define os preços de venda dos produtos após análise das cotações.
 
@@ -118,14 +137,31 @@ Documentação dos módulos disponíveis para o usuário final.
 
 ## 7. Entregas
 
-**Função:** Gestão de entregas e transportadores.
+**Função:** Gestão de entregas e romaneios de entrega.
+
+**O que é necessário:**
+- Pedidos de Compra com status **ENVIADO** (já enviados para fornecedores)
+- Usuários do tipo **Entregador** cadastrados no sistema
+- Clientes com endereço e CEP cadastrados
 
 **Funcionalidades:**
-- Visualizar entregas programadas
-- Associar transportadores às entregas
-- Acompanhar status das entregas
+- Consolidar entregas por dia a partir de pedidos ENVIADO
+- Atribuir entregadores aos clientes
+- Criar e liberar romaneios para entregadores
+- Acompanhar status das entregas em tempo real
+- Visualizar totais por entregador
+- Excluir romaneios (apenas admin)
+- Filtrar romaneios por data programada
 
-**Uso:** Controle logístico de entregas.
+**Fluxo completo:**
+1. Admin consolida entregas do dia (pedidos ENVIADO)
+2. Admin atribui entregadores aos clientes
+3. Admin confirma e libera romaneios
+4. Entregador visualiza seus romaneios
+5. Entregador atualiza status conforme realiza entregas
+6. Admin acompanha status em tempo real
+
+**Uso:** Controle logístico completo de entregas, desde a consolidação até a conclusão.
 
 ---
 
@@ -178,9 +214,12 @@ Documentação dos módulos disponíveis para o usuário final.
 
 - Cotações expiram automaticamente após 24 horas
 - Apenas uma tabela de preços pode estar ativa por vez
+- **Publicar nova tabela arquiva automaticamente a anterior** (não bloqueia)
+- **Tabelas ativas podem ser inativadas manualmente** quando necessário
 - Pedidos de compra são gerados automaticamente a partir das vendas
 - Links de cotação são únicos e válidos por 24 horas
 - Usuários vendedores têm acesso limitado apenas ao módulo de Vendas
+- Usuários entregadores têm acesso apenas ao módulo de Entregas (suas próprias entregas)
 
 ---
 
@@ -213,10 +252,24 @@ Documentação dos módulos disponíveis para o usuário final.
 - Após expirar, a tabela permanece ativa até que uma nova tabela seja publicada
 - Apenas uma tabela pode estar **ATIVA** por vez no sistema
 
+**Publicação não bloqueia:**
+- **O sistema NÃO bloqueia** a publicação de uma nova tabela quando já existe uma ativa
+- Ao publicar uma nova tabela, o sistema **arquiva automaticamente** a tabela anterior
+- A tabela anterior é marcada como "ARQUIVADA" e seus preços são removidos imediatamente
+- A nova tabela passa a ser a única ativa no sistema
+- Isso permite atualizar preços a qualquer momento, sem precisar aguardar expiração
+
+**Inativação Manual:**
+- Permite inativar uma tabela ativa manualmente, sem precisar publicar uma nova
+- Útil quando é necessário remover preços do sistema temporariamente
+- Ao inativar, a tabela é arquivada e seus preços são removidos imediatamente
+- Após inativar, é possível criar e publicar uma nova tabela normalmente
+- Disponível no botão "Inativar" na lista de tabelas (apenas para tabelas ATIVAS)
+
 **Status da tabela:**
 - **RASCUNHO:** Tabela em edição, ainda não publicada
 - **ATIVA:** Tabela publicada e em uso nas vendas
-- **ARQUIVADA:** Tabela antiga, substituída por uma nova
+- **ARQUIVADA:** Tabela antiga, substituída por uma nova ou inativada manualmente
 
 ---
 

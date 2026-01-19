@@ -15,6 +15,9 @@
 
 - Cotações expiram automaticamente após 24 horas
 - Apenas uma tabela de preços pode estar ativa por vez
+- **Publicar nova tabela arquiva automaticamente a anterior** (não bloqueia)
+- **Tabelas ativas podem ser inativadas manualmente** quando necessário
 - Pedidos de compra são gerados automaticamente a partir das vendas
 - Links de cotação são únicos e válidos por 24 horas
 - Usuários vendedores têm acesso limitado apenas ao módulo de Vendas
+- Usuários entregadores têm acesso apenas ao módulo de Entregas (suas próprias entregas)
