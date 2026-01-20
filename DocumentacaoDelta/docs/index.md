@@ -38,4 +38,3 @@ Navegue pela barra lateral para acessar a documentação de cada módulo ou conc
 
 ---
 
-*Última atualização: 2024*
