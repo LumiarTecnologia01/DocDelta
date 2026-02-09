@@ -22,6 +22,7 @@ function generateSidebar() {
     .filter(file => file.endsWith('.md'))
     .filter(file => file !== 'index.md')
     .filter(file => file !== 'delta.md') // arquivo legado (opcional)
+    .filter(file => file !== 'geral.md') // base de trabalho, não publicado
 
   // Ordem preferida (quem não estiver aqui vai pro final, em ordem alfabética)
   const order = [
@@ -31,6 +32,7 @@ function generateSidebar() {
     'tabela-precos',
     'vendas',
     'pedidos-compra',
+    'estoque',
     'entregas',
     'usuarios',
     'fluxo-sistema',
@@ -63,7 +65,7 @@ const isDev = process.env.NODE_ENV !== 'production' && !process.env.CI
 
 export default defineConfig({
   base: isDev ? '/' : '/DocDelta/',
-  title: 'Sistema Delta - Documentação',
+  title: 'Documentação do sistema',
   description: 'Documentação completa dos módulos do Sistema Delta',
   themeConfig: {
     sidebar: generateSidebar(),

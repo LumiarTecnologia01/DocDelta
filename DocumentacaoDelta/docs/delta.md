@@ -1,4 +1,4 @@
-# Módulos do Sistema Delta
+# Módulos do Sistema 
 
 Documentação dos módulos disponíveis para o usuário final.
 
@@ -351,7 +351,7 @@ Documentação dos módulos disponíveis para o usuário final.
 
 **Como funciona:**
 - Na tabela de preços, é possível definir:
-  - **Unidade de Venda:** Label da embalagem (ex: "Caixa", "Pacote", "Saco")
+  - **Embalagem:** Nome da embalagem (ex: "Caixa", "Pacote", "Saco")
   - **KG por Unidade:** Quantos kg cada unidade contém (ex: 5kg, 2kg)
 
 **No módulo de Vendas:**

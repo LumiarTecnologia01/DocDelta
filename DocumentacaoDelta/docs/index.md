@@ -1,10 +1,10 @@
-# Sistema Delta - Documentação
+# Sistema  - Documentação
 
-Bem-vindo à documentação completa do Sistema Delta!
+Bem-vindo à documentação completa do Sistema
 
 ## 📚 Sobre
 
-Esta documentação descreve todos os módulos e funcionalidades do Sistema Delta, incluindo:
+Esta documentação descreve todos os módulos e funcionalidades do Sistema, incluindo:
 
 - **Módulos principais** do sistema
 - **Conceitos detalhados** e regras de negócio
@@ -23,6 +23,7 @@ Explore os módulos na barra lateral para conhecer todas as funcionalidades disp
 - **Tabela de Preços** - Definição de preços de venda
 - **Vendas** - Criação de pedidos de venda
 - **Pedidos de Compra** - Consolidação e envio de pedidos
+- **Estoque** - Controle de saldo e movimentações
 - **Entregas** - Gestão logística
 - **Usuários** - Controle de acesso e permissões
 
